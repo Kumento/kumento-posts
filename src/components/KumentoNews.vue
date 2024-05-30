@@ -55,10 +55,24 @@ const cats = ref([]);
 const sourceUrl = computed(() => {
   return props.settings?.sourceUrl;
 });
+const category = computed(() => {
+  return props.settings?.category;
+});
+const layout = computed(() => {
+  return props.settings?.layout;
+});
+const showSidebar = computed(() => {
+  return props.settings?.showSidebar;
+});
 
 async function fetchItems() {
-  const itemsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_news_post`)
+  if(category.value !== ''){
+    const itemsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_news_post?kumento_news_category=${category.value}`)
     items.value = itemsResponse.data
+  }else{
+    const itemsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_news_post`)
+    items.value = itemsResponse.data
+  }
 }
 async function fetchCats() {
   const catsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_news_category`)
