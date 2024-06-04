@@ -49,13 +49,13 @@
               v-if="item?.kumento_content_address" 
               class="kumento_post_li"
             >
-              kumento_content_address: {{ item?.kumento_content_address }}
+              address: {{ item?.kumento_content_address }}
             </li>
             <li 
               v-if="item?.kumento_content_address_second" 
               class="kumento_post_li"
             >
-              address 2: {{ item?.kumento_content_address_second }}
+              address_second: {{ item?.kumento_content_address_second }}
             </li>
             <li 
               v-if="item?.kumento_content_zip" 
@@ -75,7 +75,6 @@
             >
               contact_name: {{ item?.kumento_content_contact_name }}
             </li>
-
             <li 
               v-if="item?.kumento_content_contact_phoneno" 
               class="kumento_post_li"
@@ -105,19 +104,19 @@
               v-if="item?.kumento_content_vision" 
               class="kumento_post_li"
             >
-             content_vision: {{ item?.kumento_content_vision }}
+              vision: {{ item?.kumento_content_vision }}
             </li>
             <li 
               v-if="item?.kumento_content_mission" 
               class="kumento_post_li"
             >
-             content_mission: {{ item?.kumento_content_mission }}
+              mission: {{ item?.kumento_content_mission }}
             </li>
             <li 
               v-if="item?.kumento_content_cvr" 
               class="kumento_post_li"
             >
-             content_cvr: {{ item?.kumento_content_cvr }}
+              cvr: {{ item?.kumento_content_cvr }}
             </li>
         </ul>
       </div>

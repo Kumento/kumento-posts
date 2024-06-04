@@ -40,16 +40,88 @@
       <div class="kumento_post_meta">
         <ul class="kumento_post_ul ku-text-sm">
             <li 
-              v-if="item?.kumento_content_publicist" 
+              v-if="item?.kumento_content_organizer" 
               class="kumento_post_li"
             >
-              publicist: {{ item?.kumento_content_publicist }}
+              organizer: {{ item?.kumento_content_organizer }}
             </li>
             <li 
               v-if="item?.kumento_content_country" 
               class="kumento_post_li"
             >
               country: {{ item?.kumento_content_country }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_venue_address" 
+              class="kumento_post_li"
+            >
+              venue_address: {{ item?.kumento_content_venue_address }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_venue_address_second" 
+              class="kumento_post_li"
+            >
+              venue_address_second: {{ item?.kumento_content_venue_address_second }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_venue_zip" 
+              class="kumento_post_li"
+            >
+              venue_zip: {{ item?.kumento_content_venue_zip }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_venue_city" 
+              class="kumento_post_li"
+            >
+              venue_city: {{ item?.kumento_content_venue_city }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_address" 
+              class="kumento_post_li"
+            >
+              address: {{ item?.kumento_content_address }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_address_second" 
+              class="kumento_post_li"
+            >
+              address_second: {{ item?.kumento_content_address_second }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_zip" 
+              class="kumento_post_li"
+            >
+              zip: {{ item?.kumento_content_zip }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_city" 
+              class="kumento_post_li"
+            >
+              city: {{ item?.kumento_content_city }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_date" 
+              class="kumento_post_li"
+            >
+              date: {{ item?.kumento_content_date }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_starttime" 
+              class="kumento_post_li"
+            >
+              starttime: {{ item?.kumento_content_starttime }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_endtime" 
+              class="kumento_post_li"
+            >
+              endtime: {{ item?.kumento_content_endtime }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_contact_name" 
+              class="kumento_post_li"
+            >
+              contact_name: {{ item?.kumento_content_contact_name }}
             </li>
             <li 
               v-if="item?.kumento_content_contact_phoneno" 
@@ -62,6 +134,18 @@
               class="kumento_post_li"
             >
               contact_email: {{ item?.kumento_content_contact_email }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_pricing" 
+              class="kumento_post_li"
+            >
+              pricing: {{ item?.kumento_content_pricing }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_homepage_signup" 
+              class="kumento_post_li"
+            >
+              homepage_signup: {{ item?.kumento_content_homepage_signup }}
             </li>
             <li 
               v-if="item?.kumento_content_homepage_link" 
@@ -78,7 +162,7 @@
         </ul>
       </div>
     </div>
-      <pre class="ku-max-w-[500px]">
+      <pre class="ku-max-w-[500px] ku-hidden">
         {{ items }}
       </pre>
     </div>

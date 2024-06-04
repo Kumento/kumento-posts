@@ -21,7 +21,7 @@
       :settings="settings" 
     />
     <KumentoAssociation 
-      v-else-if="settings?.type === 'kumento_association_post'" 
+      v-else-if="settings?.type === 'kumento_asso_post'" 
       msg="Kumento Association" 
       :settings="settings" 
     />

@@ -40,16 +40,40 @@
       <div class="kumento_post_meta">
         <ul class="kumento_post_ul ku-text-sm">
             <li 
-              v-if="item?.kumento_content_publicist" 
-              class="kumento_post_li"
-            >
-              publicist: {{ item?.kumento_content_publicist }}
-            </li>
-            <li 
               v-if="item?.kumento_content_country" 
               class="kumento_post_li"
             >
               country: {{ item?.kumento_content_country }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_address" 
+              class="kumento_post_li"
+            >
+              address: {{ item?.kumento_content_address }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_address_second" 
+              class="kumento_post_li"
+            >
+              address_second: {{ item?.kumento_content_address_second }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_zip" 
+              class="kumento_post_li"
+            >
+              zip: {{ item?.kumento_content_zip }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_city" 
+              class="kumento_post_li"
+            >
+              city: {{ item?.kumento_content_city }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_contact_name" 
+              class="kumento_post_li"
+            >
+              contact_name: {{ item?.kumento_content_contact_name }}
             </li>
             <li 
               v-if="item?.kumento_content_contact_phoneno" 
@@ -75,10 +99,22 @@
             >
               youtube_link: {{ item?.kumento_content_youtube_link }}
             </li>
+            <li 
+              v-if="item?.kumento_content_purpose" 
+              class="kumento_post_li"
+            >
+              purpose: {{ item?.kumento_content_purpose }}
+            </li>
+            <li 
+              v-if="item?.kumento_content_cvr" 
+              class="kumento_post_li"
+            >
+              cvr: {{ item?.kumento_content_cvr }}
+            </li>
         </ul>
       </div>
     </div>
-      <pre class="ku-max-w-[500px]">
+      <pre class="ku-max-w-[500px] ku-hidden">
         {{ items }}
       </pre>
     </div>
@@ -110,15 +146,15 @@ const showSidebar = computed(() => {
 
 async function fetchItems() {
   if(category.value !== ''){
-    const itemsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_association_post?kumento_association_category=${category.value}`)
+    const itemsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_asso_post?kumento_asso_category=${category.value}`)
     items.value = itemsResponse.data
   }else{
-    const itemsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_association_post`)
+    const itemsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_asso_post`)
     items.value = itemsResponse.data
   }
 }
 async function fetchCats() {
-  const catsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_association_category`)
+  const catsResponse = await axios.get( `${sourceUrl.value}/wp-json/wp/v2/kumento_asso_category`)
   cats.value = catsResponse.data
 }
 onMounted(async () => {
