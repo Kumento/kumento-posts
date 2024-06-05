@@ -2,7 +2,7 @@
     <div class="kumento_company_post ku-flex ku-flex-col ku-gap-8">
       <h1 class="kumento_post_h1 ku-text-3xl">{{ msg }}</h1>
     <div 
-      class="kumento_post_loop ku-grid ku-grid-cols-4 ku-gap-8 ku-border-b ku-pb-8" 
+      class="kumento_post_loop ku-grid ku-grid-cols-2 lg:ku-grid-cols-4 ku-gap-8 ku-border-b ku-pb-8" 
       v-for="(item, index) in items" 
       :key="index"
     >
@@ -13,29 +13,12 @@
           class="kumento_post_featured_media ku-w-full ku-h-auto ku-border-0 !ku-object-contain"
         />
       </div>
-      <div class="kumento_post_main_content ku-col-span-2">
+      <div class="kumento_post_main_content ku-col-span-2 ku-flex ku-flex-col ku-gap-2 ku-items-start">
         <h4 
-          class="kumento_post_h4 ku-text-xl" 
+          class="kumento_post_h4 ku-text-xl lg:ku-text-2xl" 
           v-text="item?.title?.rendered" 
         />
-        <div 
-          v-if="item?.excerpt?.rendered" 
-          class="kumento_post_excerpt ku-text-sm" 
-          v-html="item?.excerpt?.rendered" 
-        />
-        <div 
-          v-else 
-          class="kumento_post_content ku-text-sm" 
-          v-html="item?.content?.rendered" 
-        />
-        <a 
-          v-if="item?.link" 
-          :href="item?.link" 
-          target="_blank" 
-          class="kumento_post_link"
-        >
-          Læs mere
-        </a>
+        <Readmore :excerpt="item?.excerpt?.rendered" :content="item?.content?.rendered" />
       </div>
       <div class="kumento_post_meta">
         <ul class="kumento_post_ul ku-text-sm">
@@ -129,6 +112,7 @@
 <script setup>
 import { computed, ref, onMounted } from 'vue';
 import axios from 'axios';
+import Readmore from './parts/Readmore.vue';
 
 const props = defineProps({
   msg: String,
