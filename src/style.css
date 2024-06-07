@@ -7,3 +7,20 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+.kumento_post_wrap {
+  color: var(--ku-text-color, #333333);
+}
+.kumento_post_h1 {
+  color: var(--ku-h1-color, var(--ku-text-color, #333333));
+}
+.kumento_post_h4 {
+  color: var(--ku-h4-color, var(--ku-text-color, #333333));
+}
+.kumento_post_readmore {
+  color: var(--ku-link-color, #333333);
+}
+.kumento_post_readmore:hover,
+.kumento_post_readmore:focus {
+  color: var(--ku-link-color-hover, #000000);
+}

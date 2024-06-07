@@ -6,11 +6,14 @@
       v-for="(item, index) in items" 
       :key="index"
     >
-      <div class="kumento_post_image">
+      <div 
+        class="kumento_post_image" 
+        :class="item?.fimg_url ? 'ku-block' : 'ku-hidden lg:ku-block'"
+      >
         <img
           v-if="item?.fimg_url"    
           :src="item?.fimg_url"
-          class="kumento_post_featured_media ku-w-full ku-h-auto ku-border-0 !ku-object-contain"
+          class="kumento_post_featured_media ku-w-full ku-max-w-80 ku-h-auto ku-border-0 !ku-object-contain"
         />
       </div>
       <div class="kumento_post_main_content ku-col-span-2 ku-flex ku-flex-col ku-gap-2 ku-items-start">

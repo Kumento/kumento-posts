@@ -6,7 +6,7 @@
         />
     </Transition>
     <button 
-        class="kumento_post_readmore ku-text-sm lg:ku-text-base ku-underline ku-inline-block !ku-border-0 !ku-bg-transparent !ku-shadow-none ku-relative focus:ku-outline-none" 
+        class="kumento_post_readmore ku-m-0 ku-p-0 ku-text-sm lg:ku-text-base ku-underline ku-inline-block !ku-border-0 !ku-bg-transparent !ku-shadow-none ku-relative focus:ku-outline-none" 
         @click="toggleNav"
     >
         <span v-text="showMenu ? 'Læs mindre' : 'Læs mere'" />
